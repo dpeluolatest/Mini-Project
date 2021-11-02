@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Search Functionality" timestamp="2021-11-02T07:39:22" time="134.113" tests="9" failures="0" errors="0" skipped="4">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Search Functionality"/>
+      <property name="capabilities" value="chrome.95_0_4638_54.macosx"/>
+      <property name="featureFile" value="./features/search.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="As a user I can search by product" time="134.02">
+      <system-out><![CDATA[
+✅ Given I am on the home page✅ When I search for products, apply filter and validate results
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="As a user I can search by Brand" time="0.011">
+      <skipped/>
+      <system-out><![CDATA[
+⚠️ Given user navigates to the website bestbuy.com
+⚠️ When user enters a brand as <SearchedItem> in Search field and click Search Button
+⚠️ And user select <Category> and <SubCategory>
+⚠️ And user filter by <ScreenSize>, <StorageCapacity>
+⚠️ And user select a product with <ProductSKU> SKU
+⚠️ Then Product details is displayed
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="" time="0.003">
+      <system-out><![CDATA[
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="As a user I can search by Store Department" time="0.005">
+      <skipped/>
+      <system-out><![CDATA[
+⚠️ Given user navigates to the website bestbuy.com
+⚠️ When user enters store Department as <SearchedItem> in Search field and click Search Button
+⚠️ And user select <Category> and <SubCategory>
+⚠️ And user filter by <Location> and press the Go button
+⚠️ And user select a product with <ProductSKU> SKU
+⚠️ Then Product details is displayed
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="" time="0.003">
+      <system-out><![CDATA[
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="As a user I can search for Deals" time="0.003">
+      <skipped/>
+      <system-out><![CDATA[
+⚠️ Given user navigates to the website bestbuy.com
+⚠️ When user enters a deal type as <SearchedItem> in Search field and click Search Button
+⚠️ And user select <Category> and <SubCategory>
+⚠️ And user filter by <Price>
+⚠️ And user select a product with <ProductSKU> as SKU
+⚠️ Then Product details is displayed
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="" time="0.002">
+      <system-out><![CDATA[
+
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="As a user I can search by Featured" time="0.008">
+      <skipped/>
+      <system-out><![CDATA[
+⚠️ Given user navigates to the website bestbuy.com
+⚠️ When user enters featured program as <SearchedItem> in Search field and click Search Button
+⚠️ And user select <Category>
+⚠️ And user filter by <Same-day pickup>
+⚠️ And user select a product with <ProductSKU> SKU
+⚠️ Then Product details is displayed
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_54.macosx.Search Functionality" name="" time="0.002">
+      <system-out><![CDATA[
+
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

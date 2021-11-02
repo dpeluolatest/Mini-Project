@@ -1,0 +1,11 @@
+	allure-report/
+	babel.config copy.js
+	demo.js
+	node_modules/.bin/mime
+	node_modules/@wdio/allure-reporter/
+	node_modules/allure-js-commons/
+	node_modules/csv-stringify/
+	node_modules/file-type/
+	node_modules/js2xmlparser/
+	node_modules/mime/
+	node_modules/xmlcreate/
