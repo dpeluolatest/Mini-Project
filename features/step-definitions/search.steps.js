@@ -11,12 +11,12 @@ When(/^I search for products, apply filter and validate results$/,async (table) 
     const tableRows = table.hashes();
     for (const element of tableRows) {
       console.log("Searching Item , " + await element.SearchedItem);
-      await HomePage.searchItem(element.SearchedItem);
-      await SearchPage.selectFilterByText(element.Price);
-      await SearchPage.selectFilterByText(element.Color);
-      await SearchPage.selectFilterByText(element.Condition);
+      await HomePage.searchItem(await element.SearchedItem);
+      await SearchPage.selectFilterByText(await element.Price);
+      await SearchPage.selectFilterByText(await element.Color);
+      await SearchPage.selectFilterByText(await element.Condition);
       await SearchPage.getProductCount();
-      await SearchPage.selectProduct(element.Product);
+      await SearchPage.selectProduct(await element.Product);
       const AverageRating = await ProductPage.averageRating.getText();
       expect(AverageRating).toExist();
       expect(await ProductPage.text_Specification).toExist();
