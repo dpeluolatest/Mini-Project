@@ -10,7 +10,7 @@ import ProductPage from "../pageobjects/product.page";
 When(/^I search for products, apply filter and validate results$/,async (table) => {
     const tableRows = table.hashes();
     for (const element of tableRows) {
-      console.log("Searching Item , " + element.SearchedItem);
+      console.log("Searching Item , " + await element.SearchedItem);
       await HomePage.searchItem(element.SearchedItem);
       await SearchPage.selectFilterByText(element.Price);
       await SearchPage.selectFilterByText(element.Color);
