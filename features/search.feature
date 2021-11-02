@@ -6,13 +6,13 @@ Feature: Search Functionality
         # When I search with <SearchedItem> and click Search Button
         # And I filter by <Price>, <Color> and <Condition>
         # And user select a product with <ProductSKU> SKU
-        # Then Product details is displayed
-        When I search for products, apply filter and validate results
-            | SearchedItem | Price            | Color | Condition   | Product                                                      |
-            | Television   | $1250 - $1499.99 | Black | Open-Box    | Samsung - 75" Class Q70A Series QLED 4K UHD Smart Tizen TV   |
-           # | Phone        | $750 - $999.99   | Blue  | Refurbished | 6443180    |
-           # | Watch        | $500 - $749.99   | Gold  | New         | 6339663    |
-        Then It should very some stats and log results
+        # Then Product details is dis played
+        When I search for products, apply filter and validate results   
+            | SearchedItem | Price           | Color | Condition   | Product                                                                                          |
+            | Television   | $1250 - $1499.99 | Black | Open-Box   | Samsung - 75" Class Q70A Series QLED 4K UHD Smart Tizen TV                                       |
+            | Phone        | $750 - $999.99   | Blue  | New        | Apple - iPhone 13 5G 128GB - Blue (T-Mobile)                                                     |              
+            | Watch        | $500 - $749.99   | Gold  | New        | Apple Watch Series 6 (GPS + Cellular) 44mm Gold Aluminum Case with Pink Sand Sport Band - Gold   |     
+            #Then It should very some stats and log results
 
 
 

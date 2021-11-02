@@ -4,6 +4,7 @@ import HomePage from '../pageobjects/home.page';
 import CommonPage from '../pageobjects/common.page';
 import SearchPage from '../pageobjects/search.page'
 import ProductPage from '../pageobjects/product.page';
+import allureReporter from '@wdio/allure-reporter'
 
 Given(/^I am on the home page$/, async () => {
    await  CommonPage.openHomePage();
@@ -53,6 +54,3 @@ Given(/^I am on the home page$/, async () => {
     //}
     //await ProductPage.logReviews();
 }); */
-
-
-

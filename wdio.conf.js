@@ -132,7 +132,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    //reporters: ['spec'],
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
 
 
     //
@@ -161,7 +166,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 60000,
+        timeout: 240000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: true
     },
@@ -221,8 +226,9 @@ exports.config = {
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-    // beforeCommand: function (commandName, args) {
-    // },
+    //beforeCommand: function (commandName, args) {
+    
+    //},
     /**
      * Cucumber Hooks
      *
@@ -245,8 +251,9 @@ exports.config = {
      * @param {Pickle.IPickleStep} step     step data
      * @param {IPickle}            scenario scenario pickle
      */
-    // beforeStep: function (step, scenario) {
-    // },
+     beforeStep: function (step, scenario) {
+        browser.maximizeWindow()
+    },
     /**
      *
      * Runs after a Cucumber Step.
