@@ -8,9 +8,9 @@ Feature: Search Functionality
         When I search by product sku
             | SKU     |
             | 6483635 |
-        Then I shall verify the ProductName and Price is displayed
-            | ProductName                                      | Price   |
-            | Google - Pixel 6 128GB (Unlocked) - Stormy Black | $599.00 |
+        Then I shall verify the ProductName Matches the SKU displayed
+            | ProductName                                      |
+            | Google - Pixel 6 128GB (Unlocked) - Stormy Black |
 
     @TestCase2
     Scenario Outline: As a user, I can search for stores near me
@@ -31,8 +31,8 @@ Feature: Search Functionality
             | Brand |
             | Apple |
         Then I can select category, sub category, then slect a name and verify the url
-            | Category | SubCategory | Name                     | Price | PageTitle                |
-            | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | $9.99 | Samsung Store - Best Buy |
+            | Category | SubCategory | Name                     |
+            | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | 
 
 
     @TestCase4

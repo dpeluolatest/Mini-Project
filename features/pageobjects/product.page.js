@@ -6,6 +6,10 @@ class ProductPage {
   get averageRating() {
     return $(".ugc-c-review-average.order-1");
   }
+
+  get SKU() {
+    return $(`//span[normalize-space()='6483635']`);
+  }
   get productTitle() {
     return $("//h1");
   }
@@ -51,5 +55,7 @@ class ProductPage {
     const price = await element.getText();
     return price;
   }
+
+ 
 }
 export default new ProductPage();

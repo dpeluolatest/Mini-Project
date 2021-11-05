@@ -18,7 +18,6 @@ Then(
   async (table) => {
     await Brands.selectCategory(table);
     await Brands.selectSubCategory(table);
-    expect(browser.getUrl).toHaveTextContaining();
     await Brands.SiteLogo.click();
   }
 );
