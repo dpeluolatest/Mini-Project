@@ -4,36 +4,25 @@ import CommonPage from "../pageobjects/common.page";
 import SearchPage from "../pageobjects/search.page";
 import allureReporter from "@wdio/allure-reporter";
 import ProductPage from "../pageobjects/product.page";
+import AppliancePage from "../pageobjects/appliance.page";
 
-// Search Steps
+// search by SKU
+When(/^I search by product sku$/, async (table) => {
+  const tableRow = table.hashes();
+  for (const ele of tableRow) {
+    console.log("Searching Item , " + (await ele.SKU));
+    await HomePage.searchItem(await ele.SKU);
+  }
+});
 
-When(/^I search for products, apply filter and validate results$/,async (table) => {
-    const tableRows = table.hashes();
-    for (const element of tableRows) {
-      console.log("Searching Item , " + await element.SearchedItem);
-      await HomePage.searchItem(await element.SearchedItem);
-      await SearchPage.selectFilterByText(await element.Price);
-      await SearchPage.selectFilterByText(await element.Color);
-      await SearchPage.selectFilterByText(await element.Condition);
-      await SearchPage.getProductCount();
-      await SearchPage.selectProduct(await element.Product);
-      const AverageRating = await ProductPage.averageRating.getText();
-      expect(AverageRating).toExist();
-      expect(await ProductPage.text_Specification).toExist();
-      await ProductPage.reviewTag.waitForClickable();
-      await ProductPage.reviewTag.scrollIntoView();
-      const review = await ProductPage.reviewTag;
-      await browser.execute("arguments[0].click();", review);
-      var i = 0;
-      for (i = 0; i < 3; i++) {
-        allureReporter.addSeverity("Critical");
-        console.log(await ProductPage.reviews[i].getText());
-        allureReporter.addAttachment(await ProductPage.reviews[i].getText());
-      }
-      await HomePage.siteLogo.scrollIntoView();
-      await HomePage.siteLogo.waitForClickable();
+Then(
+  /^I shall verify the ProductName and Price is displayed$/,
+  async (table) => {
+    const tableRow = table.hashes();
+    for (const element of tableRow) {
+      expect(browser.getUrl).toHaveTextContaining(element.ProductName);
+      expect(browser.getTitle).toHaveTextContaining(element.ProductName);
       await HomePage.siteLogo.click();
     }
   }
 );
-

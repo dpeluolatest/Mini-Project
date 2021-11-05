@@ -1,78 +1,60 @@
 Feature: Search Functionality
 
+
     @TestCase1
-    Scenario Outline: As a user, I can search by product
+    Scenario Outline: As a user, I can search by product SKU
+
         Given I am on the home page
-        # When I search with <SearchedItem> and click Search Button
-        # And I filter by <Price>, <Color> and <Condition>
-        # And user select a product with <ProductSKU> SKU
-        # Then Product details is dis played
-        When I search for products, apply filter and validate results   
-            | SearchedItem | Price           | Color | Condition   | Product                                                                                          |
-            | Television   | $1250 - $1499.99 | Black | Open-Box   | Samsung - 75" Class Q70A Series QLED 4K UHD Smart Tizen TV                                       |
-            | Phone        | $750 - $999.99   | Blue  | New        | Apple - iPhone 13 5G 128GB - Blue (T-Mobile)                                                     |              
-            | Watch        | $500 - $749.99   | Gold  | New        | Apple Watch Series 6 (GPS + Cellular) 44mm Gold Aluminum Case with Pink Sand Sport Band - Gold   |     
-            #Then It should very some stats and log results
-
-
+        When I search by product sku
+            | SKU     |
+            | 6483635 |
+        Then I shall verify the ProductName and Price is displayed
+            | ProductName                                      | Price   |
+            | Google - Pixel 6 128GB (Unlocked) - Stormy Black | $599.00 |
 
     @TestCase2
-    Scenario: As a user, I can search by Brand
+    Scenario Outline: As a user, I can search for stores near me
 
-        Given user navigates to the website bestbuy.com
-        When user enters a brand as <SearchedItem> in Search field and click Search Button
-        And user select <Category> and <SubCategory>
-        And user filter by <ScreenSize>, <StorageCapacity>
-        And user select a product with <ProductSKU> SKU
-        Then Product details is displayed
-
-    Example:
-            | SearchedItem | Category  | SubCategory | ScreenSize  | StorageCapacity | ProductSKU |
-            | Samsung      | Computing | Laptops     | 12" - 14.9" | 500 GB and up   | 6457789    |
-
+        Given I am on the home page
+        When I search for stores and by zipcode
+            | Search | zipcode |
+            | stores | 19152   |
+        Then I shall see Stores near 19152
+            | NumberOfStores | zipcode | PageTitle                                                |
+            | 15             | 19152   | Best Buy Store Locator: Store Hours, Directions & Events |
 
     @TestCase3
-    Scenario: As a user, I can search by Store Department
+    Scenario Outline: As a user, I can search By Brands
 
-        Given user navigates to the website bestbuy.com
-        When user enters store Department as <SearchedItem> in Search field and click Search Button
-        And user select <Category> and <SubCategory>
-        And user filter by <Location> and press the Go button
-        And user select a product with <ProductSKU> SKU
-        Then Product details is displayed
-
-    Example:
-            | SearchedItem | Category                 | SubCategory                 | Location | ProductSKU |
-            | Appliances   | Major Kitchen appliances | Shop  refrigerators on sale | 19152    | 6417768    |
+        Given I am on the home page
+        When I search by brand name
+            | Brand |
+            | Apple |
+        Then I can select category, sub category, then slect a name and verify the url
+            | Category | SubCategory | Name                     | Price | PageTitle                |
+            | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | $9.99 | Samsung Store - Best Buy |
 
 
     @TestCase4
-    Scenario: As a user, I can search for Deals
+    Scenario Outline: As a user, I can search by Department
 
-        Given user navigates to the website bestbuy.com
-        When user enters a deal type as <SearchedItem> in Search field and click Search Button
-        And user select <Category> and <SubCategory>
-        And user filter by <Price>
-        And user select a product with <ProductSKU> as SKU
-        Then Product details is displayed
-
-    Example:
-            | SearchedItem | Category     | SubCategory | Price        | ProductSKU |
-            | Top Deals    | Black Friday | Headphones  | $50 - $74.99 | 6423274    |
-
+        Given I am on the home page
+        When I search by store department
+            | Department | Category      | SubCategory               | Product                                                                                |
+            | Appliance  | Refrigerators | French Door Refrigerators | LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
+        Then I can select the Product and verify its price
+            | Name                                                                                   |
+            | LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
 
     @TestCase5
-    Scenario: As a user, I can search by Featured
+    Scenario Outline: As a user, I can search by product
+        Given I am on the home page
+        When I search for products, apply filter and validate results
+            | SearchedItem | Price            | Color | Condition | Product                                                                                        |    Iteration   |
+            | Television   | $1250 - $1499.99 | Black | Open-Box  | Samsung - 75" Class Q70A Series QLED 4K UHD Smart Tizen TV                                     |       3        |
+            | Phone        | $750 - $999.99   | Blue  | New       | Apple - iPhone 13 5G 128GB - Blue (T-Mobile)                                                   |       3        |
+            | Watch        | $500 - $749.99   | Gold  | New       | Apple Watch Series 6 (GPS + Cellular) 44mm Gold Aluminum Case with Pink Sand Sport Band - Gold |       3        |
 
-        Given user navigates to the website bestbuy.com
-        When user enters featured program as <SearchedItem> in Search field and click Search Button
-        And user select <Category>
-        And user filter by <Same-day pickup>
-        And user select a product with <ProductSKU> SKU
-        Then Product details is displayed
 
-    Example:
-            | SearchedItem | Category     | Get it Fast        | ProductSKU |
-            | Gifts        | Unique Gifts | Same-days delivery | 6461348    |
 
 

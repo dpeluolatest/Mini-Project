@@ -1,28 +1,39 @@
-
- // *============================ Home page containing specific selectors and methods ================================* 
- 
+// Home page containing specific Page Objects and Actions
 
 class HomePage {
+  // Page Objets
 
- // ---------------------------------- define selectors using getter methods ------------------------------------------*
+  get siteLogo() {
+    return $(".logo");
+  }
+  get btnCloseLoginModal() {
+    return $(".email-submission-modal #Close_Cancel_Line");
+  }
+  get inputSearch() {
+    return $("#gh-search-input");
+  }
+  get searchIcon() {
+    return $(".header-search-icon");
+  }
 
-    get siteLogo () { return $('.logo')}
-    get btnCloseLoginModal(){return $('.email-submission-modal #Close_Cancel_Line')}
-    get inputSearch () { return $('#gh-search-input') }
-    get searchIcon () { return $('.header-search-icon') }
+  // Acctions
 
-    
- // ------------------------------------- Home Page Methods ------------------------------------------------------------*
-    
+  async searchItem(SearchedItem) {
+    this.inputSearch.waitForClickable();
+    await this.inputSearch.doubleClick();
+    browser.keys("Delete");
+    await this.inputSearch.waitForDisplayed();
+    await this.inputSearch.addValue(SearchedItem);
+    await this.searchIcon.click();
+  }
 
-    async searchItem (SearchedItem) {
-        await this.inputSearch.doubleClick();
-        browser.keys("Delete");
-        await this.inputSearch.waitForDisplayed();
-        //await this.inputSearch.clearValue();
-        await this.inputSearch.addValue(SearchedItem);
-        await this.searchIcon.click();
-    } 
-    
+  async closePopUp() {
+    this.btnCloseLoginModal.waitForExist(15000);
+    if (this.btnCloseLoginModal.isExisting) {
+      await this.btnCloseLoginModal.click();
+    } else {
+      console.log("Pop Up does not exist");
+    }
+  }
 }
 export default new HomePage();
