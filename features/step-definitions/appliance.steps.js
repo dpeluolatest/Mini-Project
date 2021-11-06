@@ -18,7 +18,7 @@ When(/^I search by store department$/, async (table) => {
 Then(/^I shall verify the product displayed$/, async (table) => {
   const tableRow = table.hashes();
   for (const elem of tableRow) {
-    expect(browser.getUrl()).toHaveTextContaining(elem.Name);
+    expect(await browser.getUrl()).toHaveTextContaining(elem.Name);
     expect(browser.getTitle).toHaveTextContaining(elem.Name);
   }
   await Appliance.SiteLogo.scrollIntoView();

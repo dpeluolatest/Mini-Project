@@ -9,3 +9,4 @@
 	node_modules/js2xmlparser/
 	node_modules/mime/
 	node_modules/xmlcreate/
+	allure-results/*
