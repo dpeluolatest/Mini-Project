@@ -19,12 +19,15 @@ class HomePage {
   // Acctions
 
   async searchItem(SearchedItem) {
+    try{
     this.inputSearch.waitForClickable();
     await this.inputSearch.doubleClick();
     browser.keys("Delete");
     await this.inputSearch.waitForDisplayed();
     await this.inputSearch.addValue(SearchedItem);
     await this.searchIcon.click();
+    }catch(error)
+    {console.log(err);}
   }
 
   async closePopUp() {
