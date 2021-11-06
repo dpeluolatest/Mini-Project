@@ -20,7 +20,8 @@ Then(/^I shall verify the product displayed$/, async (table) => {
   for (const elem of tableRow) {
     expect(await browser.getUrl()).toHaveTextContaining(elem.Name);
     expect(browser.getTitle).toHaveTextContaining(elem.Name);
+    await Appliance.SiteLogo.scrollIntoView();
+    await Appliance.SiteLogo.click();
   }
-  await Appliance.SiteLogo.scrollIntoView();
-  await Appliance.SiteLogo.click();
+  
 });
