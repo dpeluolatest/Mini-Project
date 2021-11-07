@@ -55,7 +55,7 @@ class Brands {
         if (subcat === element.SubCategory) {
           await value.click();
           console.log("clicking on the element " + subcat);
-          expect(browser.getUrl()).toHaveTextContaining(element.Name);
+          expect(browser.getUrl()).toHaveTextContaining(await element.Name);
           return;
         }
       });

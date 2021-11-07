@@ -20,11 +20,11 @@ class HomePage {
 
   async searchItem(SearchedItem) {
     try{
-    this.inputSearch.waitForClickable();
+    await this.inputSearch.waitForClickable();
     await this.inputSearch.doubleClick();
     browser.keys("Delete");
     await this.inputSearch.waitForDisplayed();
-    await this.inputSearch.setValue(SearchedItem);
+    await this.inputSearch.setValue(await SearchedItem);
     await this.searchIcon.click();
     }catch(error)
     {console.log(err);}

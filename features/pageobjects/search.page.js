@@ -39,7 +39,7 @@ class SearchPage {
       const element = await checkBoxClass[i].getText();
       if (element === text) {
         //await this.checkBoxClass[i].click()
-        element.click();
+        await element.click();
       }
     }
   }

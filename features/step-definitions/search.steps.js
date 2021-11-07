@@ -20,10 +20,10 @@ Then(
   async (table) => {
     const tableRow = table.hashes();
     for (const element of tableRow) {
-      expect (ProductPage.SKU).toExist()
+      expect (await ProductPage.SKU).toExist()
       expect(await ele).toHaveText();
-      expect(browser.getUrl).toHaveTextContaining(element.ProductName);
-      expect(browser.getTitle).toHaveTextContaining(element.ProductName);
+      expect(browser.getUrl).toHaveTextContaining(await element.ProductName);
+      expect(browser.getTitle).toHaveTextContaining(await element.ProductName);
       await HomePage.siteLogo.click();
     }
   }

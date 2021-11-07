@@ -42,7 +42,7 @@ class ProductPage {
   };
 
   async getElementText(element) {
-    const ele = element.getElementText();
+    const ele = await element.getElementText();
     return ele;
   }
 
