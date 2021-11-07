@@ -23,16 +23,16 @@ Feature: Search Functionality
             | NumberOfStores | zipcode | PageTitle                                                |
             | 15             | 19152   | Best Buy Store Locator: Store Hours, Directions & Events |
 
-    @TestCase3
-    Scenario Outline: As a user, I can search By Brands
+    #@TestCase3
+    #Scenario Outline: As a user, I can search By Brands
 
-        Given I am on the home page
-        When I search by brand name
-            | Brand |
-            | Apple |
-        Then I can select category, sub category, then slect a name and verify the url
-            | Category | SubCategory | Name                     |             
-            | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | 
+        #Given I am on the home page
+        #When I search by brand name
+            #| Brand |
+            #| Apple |
+        #Then I can select category, sub category, then slect a name and verify the url
+            #| Category | SubCategory | Name                     |             
+            #| Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | 
 
 
     #@TestCase4
