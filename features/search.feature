@@ -31,7 +31,7 @@ Feature: Search Functionality
             | Brand |
             | Apple |
         Then I can select category, sub category, then slect a name and verify the url
-            | Category | SubCategory | Name                     | PageTitle                |
+            | Category | SubCategory | Name                     |             
             | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | 
 
 
