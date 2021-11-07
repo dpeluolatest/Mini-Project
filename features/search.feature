@@ -12,16 +12,16 @@ Feature: Search Functionality
             | ProductName                                      |
             | Google - Pixel 6 128GB (Unlocked) - Stormy Black |
 
-    @TestCase2
-    Scenario Outline: As a user, I can search for stores near me
+    #@TestCase2
+    #Scenario Outline: As a user, I can search for stores near me
 
-        Given I am on the home page
-        When I search for stores and by zipcode
-            | Search | zipcode |
-            | stores | 19152   |
-        Then I shall see Stores near 19152
-            | NumberOfStores | zipcode | PageTitle                                                |
-            | 15             | 19152   | Best Buy Store Locator: Store Hours, Directions & Events |
+        #Given I am on the home page
+        #When I search for stores and by zipcode
+            #| Search | zipcode |
+            #| stores | 19152   |
+        #Then I shall see Stores near 19152
+            #| NumberOfStores | zipcode | PageTitle                                                |
+            #| 15             | 19152   | Best Buy Store Locator: Store Hours, Directions & Events |
 
     #@TestCase3
     #Scenario Outline: As a user, I can search By Brands
