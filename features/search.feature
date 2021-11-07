@@ -35,19 +35,20 @@ Feature: Search Functionality
             | Apple TV | Apple TV 4K | Apple TV 4K 64GB - Black | 
 
 
-    @TestCase4
-    Scenario Outline: As a user, I can search by Department
+    #@TestCase4
+    #Scenario Outline: As a user, I can search by Department
 
-        Given I am on the home page
-        When I search by store department
-            | Department | Category      | SubCategory               | Product                                                                                |
-            | Appliance  | Refrigerators | French Door Refrigerators | LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
-        Then I can select the Product and verify its price
-            | Name                                                                                   |
-            | LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
+        #Given I am on the home page
+        #When I search by store department
+        #    | Department | Category      | SubCategory               | Product                                                                                |
+        #    | Appliance  | Refrigerators | French Door Refrigerators | LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
+        #Then I can select the Product and verify its price
+            #| Name                                                                                   |
+            #| LG - 25.1 Cu. Ft. French Door Refrigerator with Ice Maker - PrintProof Stainless Steel |
 
     #@TestCase5
     #Scenario Outline: As a user, I can search by product
+
         #Given I am on the home page
         #When I search for products, apply filter and validate results
             #| SearchedItem | Price            | Color | Condition | Product                                                                                        |    Iteration   |
