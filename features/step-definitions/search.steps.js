@@ -16,13 +16,12 @@ When(/^I search by product sku$/, async (table) => {
 });
 
 Then(
-  /^I shall verify the ProductName and Price is displayed$/,
+  /^I shall verify the ProductName Matches the SKU displayed$/,
   async (table) => {
     const tableRow = table.hashes();
     for (const element of tableRow) {
-      expect (await ProductPage.SKU).toExist()
-      expect(await ele).toHaveText();
-      expect(browser.getUrl).toHaveTextContaining(await element.ProductName);
+      console.log('The product SKU is', await ProductPage.getSKU())
+      expect(element.SKU).toEqual(await ProductPage.getSKU())
       expect(browser.getTitle).toHaveTextContaining(await element.ProductName);
       await HomePage.siteLogo.click();
     }

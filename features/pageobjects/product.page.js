@@ -7,8 +7,11 @@ class ProductPage {
     return $(".ugc-c-review-average.order-1");
   }
 
-  get SKU() {
-    return $(`//span[normalize-space()='6483635']`);
+  get classSKU() {
+    return $$('.product-data-value.body-copy');
+  }
+  get className() {
+    return $$('.heading-5.v-fw-regular');
   }
   get productTitle() {
     return $("//h1");
@@ -35,16 +38,10 @@ class ProductPage {
     return $(".logo");
   }
 
-  getProductName = async () => {
-    const productTag = await this.productTitle;
-    const productName = await productTag.getText();
+  async getPhoneName () {
+    let productName = await this.className[2].getText();
     return productName;
   };
-
-  async getElementText(element) {
-    const ele = await element.getElementText();
-    return ele;
-  }
 
   async clickSpecification() {
     const review = await this.text_Specification;
@@ -56,6 +53,11 @@ class ProductPage {
     return price;
   }
 
- 
+  async getSKU() {
+    let SKU = this.classSKU[1].getText()
+    return SKU;
+    
+  //}
+  }
 }
 export default new ProductPage();

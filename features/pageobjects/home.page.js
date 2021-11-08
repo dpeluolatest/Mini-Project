@@ -27,7 +27,7 @@ class HomePage {
     await this.inputSearch.setValue(await SearchedItem);
     await this.searchIcon.click();
     }catch(error)
-    {console.log(err);}
+    {console.log(error);}
   }
 
   async closePopUp() {
