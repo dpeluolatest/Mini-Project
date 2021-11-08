@@ -72,7 +72,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -137,12 +137,13 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     //reporters: ['spec'],
     reporters: [
-        [
-            'allure', 
-            {
-        outputDir: 'allure-results',
-        }
-        ],
+        //[
+         //   'allure', 
+         //   {
+        //outputDir: 'allure-results',
+        //addConsoleLogs: true,
+        //}
+        //],
         ['junit', 
         {
             outputDir: './report',
@@ -290,6 +291,7 @@ exports.config = {
         if (error) {
             await browser.takeScreenshot();
           }
+          result.duration
     },
     /**
      *

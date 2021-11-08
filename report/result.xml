@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Search Functionality" timestamp="2021-11-04T20:11:38" time="211.247" tests="5" failures="0" errors="0" skipped="1">
+  <testsuite name="Search Functionality" timestamp="2021-11-07T18:49:56" time="180.462" tests="5" failures="1" errors="1" skipped="1">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="Search Functionality"/>
       <property name="capabilities" value="chrome.95_0_4638_69.macosx"/>
       <property name="featureFile" value="./features/search.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by product SKU" time="21.675">
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by product SKU" time="19.214">
       <system-out><![CDATA[
-✅ Given I am on the home page✅ When I search by product sku✅ Then I shall verify the ProductName and Price is displayed
+✅ Given I am on the home page✅ When I search by product sku✅ Then I shall verify the ProductName Matches the SKU displayed
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search for stores near me" time="6.065">
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search for stores near me" time="6.256">
       <system-out><![CDATA[
 ✅ Given I am on the home page✅ When I search for stores and by zipcode✅ Then I shall see Stores near 19152
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search By Brands" time="18.716">
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search By Brands" time="17.93">
       <system-out><![CDATA[
 ✅ Given I am on the home page✅ When I search by brand name✅ Then I can select category, sub category, then slect a name and verify the url
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by Department" time="31.09">
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by Department" time="31.846">
       <skipped/>
       <system-out><![CDATA[
 ✅ Given I am on the home page✅ When I search by store department⚠️ Then I can select the Product and verify its price
 
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by product" time="133.589">
+    <testcase classname="CucumberJUnitReport-chrome.95_0_4638_69.macosx.Search Functionality" name="As a user I can search by product" time="104.922">
+      <failure/>
+      <error message="Error: Can't call scrollIntoView on element with selector &quot;//span[@class='facet-option-label-text'][normalize-space()='$500 - $749.99']&quot; because element wasn't found"/>
       <system-out><![CDATA[
-✅ Given I am on the home page✅ When I search for products, apply filter and validate results
+✅ Given I am on the home page❗ When I search for products, apply filter and validate results
 ]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call scrollIntoView on element with selector "//span[@class='facet-option-label-text'][normalize-space()='$500 - $749.99']" because element wasn't found
+    at implicitWait (/Users/olugbengapeluola/Desktop/NewProject/node_modules/webdriverio/build/utils/implicitWait.js:34:19)
+    at Element.elementErrorHandlerCallbackFn (/Users/olugbengapeluola/Desktop/NewProject/node_modules/webdriverio/build/middlewares.js:20:29)
+    at Element.wrapCommandFn (/Users/olugbengapeluola/Desktop/NewProject/node_modules/@wdio/utils/build/shim.js:131:29)
+    at SearchPage.selectFilterByText (/Users/olugbengapeluola/Desktop/NewProject/features/pageobjects/search.page.js:31:5)
+    at World.<anonymous> (/Users/olugbengapeluola/Desktop/NewProject/features/step-definitions/product.steps.js:18:7)
+]]></system-err>
     </testcase>
   </testsuite>
 </testsuites>
